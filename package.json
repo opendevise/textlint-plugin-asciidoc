@@ -1,0 +1,25 @@
+{
+  "name": "textlint-plugin-asciidoc",
+  "version": "0.0.1-dev",
+  "description": "Provides AsciiDoc processing support for textlint.",
+  "author": {
+    "name": "Dan Allen",
+    "url": "https://github.com/mojavelinux"
+  },
+  "homepage": "https://github.com/opendevise/textlint-plugin-asciidoc",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [
+    "textlint",
+    "plugin",
+    "asciidoc"
+  ],
+  "devDependencies": {
+    "mocha": "^3.3.0",
+    "power-assert": "^1.4.2",
+    "textlint": "^8.2.1"
+  }
+}

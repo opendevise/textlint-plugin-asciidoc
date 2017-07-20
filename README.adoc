@@ -1,0 +1,55 @@
+= textlint-plugin-asciidoc
+:uri-textlint: https://github.com/textlint/textlint
+
+WARNING: This plugin is currently alpha status.
+Do not expect it to handle all the AsciiDoc syntax correctly.
+Refer to the test suite to learn what syntax the parser currently supports.
+The AST created by this plugin is not yet compatible with any textlint rules.
+That alignment is expected to happen as the plugin evolves.
+
+An AsciiDoc parser designed to perform validations on AsciiDoc documents using {uri-textlint}[textlint].
+
+== Prerequisites
+
+This plugin targets ES6 and is tested using Node (stable).
+Therefore, you must have at least Node 7 in order to run it.
+
+== Usage
+
+[source,js]
+----
+const AsciiDocProcessor = require('textlint-plugin-asciidoc').Processor
+const processor = new AsciiDocProcessor().processor('.adoc')
+const ast = processor.preProcess('Build me a tree.\nI will visit its branches.', '<stdin>')
+console.log(ast)
+----
+
+.Output
+....
+{
+  type: 'DocumentNode',
+  raw: 'Build me a tree.\nI will visit its branches.',
+  range: [ 0, 43 ],
+  loc: {
+    start: Position { line: 1, column: 0 },
+    end: Position { line: 2, column: 26 }
+  },
+  children: [
+    {
+      type: 'ParagraphNode',
+      range: [ 0, 43 ],
+      loc: {
+        start: Position { line: 1, column: 0 },
+        end: Position { line: 2, column: 26 }
+      },
+      children: [...]
+    }
+  ]
+}
+....
+
+=== Copyright and License
+
+Copyright (C) 2017 Dan Allen and OpenDevise Inc.
+Free use of this software is granted under the terms of the MIT License.
+To see the full text of the license, refer to the <<LICENSE.adoc#,LICENSE>> file.
