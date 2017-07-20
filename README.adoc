@@ -1,13 +1,30 @@
 = textlint-plugin-asciidoc
+// Settings:
+:idprefix:
+:idseparator: -
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:warning-caption: :warning:
+endif::[]
+// URIs:
+:repo-path: opendevise/textlint-plugin-asciidoc
+:uri-repo: https://github.com/{repo-path}
+:uri-asciidoc: http://asciidoctor.org/docs/what-is-asciidoc/
 :uri-textlint: https://github.com/textlint/textlint
+:uri-ci-travis: https://travis-ci.org/{repo-path}
+
+ifdef::status[]
+image:https://img.shields.io/travis/{repo-path}/master.svg[Build Status (Travis CI), link={uri-ci-travis}]
+endif::[]
+
+An AsciiDoc parser designed to perform validations on {uri-asciidoc}[AsciiDoc] documents using {uri-textlint}[textlint].
 
 WARNING: This plugin is currently alpha status.
 Do not expect it to handle all the AsciiDoc syntax correctly.
 Refer to the test suite to learn what syntax the parser currently supports.
 The AST created by this plugin is not yet compatible with any textlint rules.
 That alignment is expected to happen as the plugin evolves.
-
-An AsciiDoc parser designed to perform validations on AsciiDoc documents using {uri-textlint}[textlint].
 
 == Prerequisites
 
