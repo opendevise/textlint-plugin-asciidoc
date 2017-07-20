@@ -20,10 +20,11 @@ endif::[]
 
 An AsciiDoc parser designed to perform validations on {uri-asciidoc}[AsciiDoc] documents using {uri-textlint}[textlint].
 
-WARNING: This plugin is currently alpha status.
+.*Alpha warning*
+WARNING: This plugin is currently in alpha.
 Do not expect it to handle all the AsciiDoc syntax correctly.
 Refer to the test suite to learn what syntax the parser currently supports.
-The AST created by this plugin is not yet compatible with any textlint rules.
+The AST created by this plugin is also not yet compatible with any textlint rules.
 That alignment is expected to happen as the plugin evolves.
 
 == Prerequisites
