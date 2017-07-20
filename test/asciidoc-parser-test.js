@@ -37,6 +37,19 @@ describe('AsciiDocParser', () => {
       assert.deepEqual(header.range, result.range)
       // TODO assert header node has children
     })
+    // TEMPORARY
+    it('should skip lines in header between do not edit markers', () => {
+      const result = parseFixture(loadFixture('do-not-edit.adoc'))
+      assert.equal(result.children.length, 1)
+      const header = result.children[0]
+      assert.equal(header.type, 'HeaderNode')
+      assert.deepEqual(header.loc.start, { line: 1, column: 0 })
+      assert.deepEqual(header.loc.end, { line: 8, column: 20 })
+      assert.equal(header.children.length, 2)
+      assert.equal(header.children[0].type, 'LineNode')
+      assert.equal(header.children[1].type, 'AttributeEntryNode')
+    })
+    // TEMPORARY
   })
 
   context('ParagraphNode', () => {
