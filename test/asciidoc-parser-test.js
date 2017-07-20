@@ -99,16 +99,17 @@ describe('AsciiDocParser', () => {
       assert.equal(para.type, 'ParagraphNode')
     })
 
-    // FIXME failing
-    //it('should terminate SectionNode at sibling section', () => {
-    //  const result = parseFixture(loadFixture('sections.adoc'))
-    //  assert.equal(result.children.length, 2)
-    //  const [sect1, sect2] = result.children
-    //  assert.equal(sect1.type, 'SectionNode')
-    //  //assert.equal(sect1.children.length, 1)
-    //  assert.equal(sect2.type, 'SectionNode')
-    //  //assert.equal(sect2.children.length, 1)
-    //})
+    it('should terminate SectionNode at start of sibling section', () => {
+      const result = parseFixture(loadFixture('sections.adoc'))
+      assert.equal(result.children.length, 3)
+      const endingLines = [3, 7, 11] 
+      result.children.forEach((sect, idx) => {
+        assert.equal(sect.type, 'SectionNode')
+        assert.equal(sect.children.length, 1)
+        assert.equal(sect.children[0].type, 'ParagraphNode')
+        assert.equal(sect.loc.end.line, endingLines[idx])
+      })
+    })
   })
 
   context('DelimitedBlockNode', () => {

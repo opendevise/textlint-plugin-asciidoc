@@ -2,6 +2,10 @@
 
 This document is a good thing.
 
+== Main Points
+
+It tells you things you need to know.
+
 == Conclusion
 
-All good things must come to an end.
+But like all good things, it must come to an end.
