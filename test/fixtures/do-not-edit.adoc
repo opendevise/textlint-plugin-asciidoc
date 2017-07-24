@@ -1,0 +1,8 @@
+= Document Title
+// DO NOT EDIT BETWEEN THESE LINES >>>
+ifdef::foobar[]
+include::_attributes.adoc[]
+endif::[]
+:skipme: 
+// <<< DO NOT EDIT BETWEEN THESE LINES
+:keywords: buzzword
