@@ -1,6 +1,6 @@
 {
   "name": "textlint-plugin-asciidoc",
-  "version": "0.0.1-dev",
+  "version": "1.0.0-alpha.1",
   "description": "Provides AsciiDoc processing support for textlint.",
   "author": {
     "name": "Dan Allen",
